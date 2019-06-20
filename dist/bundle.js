@@ -1,10 +1,11 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('react')) :
-  typeof define === 'function' && define.amd ? define(['react'], factory) :
-  (global = global || self, global.countdown = factory(global.React));
-}(this, function (React) { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('react'), require('react-dom'), require('react-share')) :
+  typeof define === 'function' && define.amd ? define(['react', 'react-dom', 'react-share'], factory) :
+  (global = global || self, factory(global.React, global.ReactDOM, global.reactShare));
+}(this, function (React, ReactDOM, reactShare) { 'use strict';
 
   var React__default = 'default' in React ? React['default'] : React;
+  ReactDOM = ReactDOM && ReactDOM.hasOwnProperty('default') ? ReactDOM['default'] : ReactDOM;
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -96,6 +97,38 @@
     return Header;
   }(React.Component);
 
-  return Header;
+  function App() {
+    console.log(window);
+    return React__default.createElement("div", {
+      className: "App"
+    }, React__default.createElement(Header, null));
+  }
+
+  // This optional code is used to register a service worker.
+  // register() is not called by default.
+  // This lets the app load faster on subsequent visits in production, and gives
+  // it offline capabilities. However, it also means that developers (and users)
+  // will only see deployed updates on subsequent visits to a page, after all the
+  // existing tabs open on the page have been closed, since previously cached
+  // resources are updated in the background.
+  // To learn more about the benefits of this model and instructions on how to
+  // opt-in, read https://bit.ly/CRA-PWA
+  var isLocalhost = Boolean(window.location.hostname === 'localhost' || // [::1] is the IPv6 localhost address.
+  window.location.hostname === '[::1]' || // 127.0.0.1/8 is considered localhost for IPv4.
+  window.location.hostname.match(/^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/));
+
+  function unregister() {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.ready.then(function (registration) {
+        registration.unregister();
+      });
+    }
+  }
+
+  ReactDOM.render(React__default.createElement(App, null), document.getElementById('root')); // If you want your app to work offline and load faster, you can change
+  // unregister() to register() below. Note this comes with some pitfalls.
+  // Learn more about service workers: https://bit.ly/CRA-PWA
+
+  unregister();
 
 }));

@@ -1,10 +1,15 @@
 {
-  "name": "example_01",
+  "name": "@kieuquynh/headerdemo",
   "version": "0.1.0",
-  "main": "dist/header.min.js",
-  "private": true,
+  "main": "dist/index.js",
+  "style": "dist/style.css",
+  "file": [
+    "dist"
+  ],
   "dependencies": {
+    "@kieuquynh/demodeploy": "^0.1.0",
     "bootstrap": "^4.3.1",
+    "classnames": "^2.2.6",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
@@ -12,7 +17,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "rollup -c -o dist/header.min.js",
+    "build": "rollup -c ",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -35,8 +40,24 @@
     "@babel/core": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
     "babel-preset-react": "^6.24.1",
+    "postcss-modules": "^1.4.1",
     "rollup": "^1.15.6",
     "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-postcss": "^2.0.3",
     "rollup-plugin-uglify": "^6.0.2"
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KieuQuynh/HeaderDemo.git"
+  },
+  "keywords": [
+    "headerdemo"
+  ],
+  "author": "kieuquynh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KieuQuynh/HeaderDemo/issues"
+  },
+  "homepage": "https://github.com/KieuQuynh/HeaderDemo#readme"
 }

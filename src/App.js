@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import { Component } from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap-grid.min.css";
@@ -7,6 +6,8 @@ import {
   FacebookShareButton,
   TwitterShareButton,  FacebookIcon
 } from "react-share";
+import Header from "../src/Header"
+
 
 function One() {
   return (
@@ -78,24 +79,10 @@ function App() {
   return (
   
     <div className="App">
-      {/* <div className="container">
-        <div className="row">
-          <Demo title="Product 1" />
-          <Demo title="Product 2" />
-          <DemoProps title = "TH True milk"/>
-        </div>
-      </div> */}
-      <FacebookShareButton
+  
+
+  <Header/>
      
-        url="http://localhost:3000/"
-        title="my link"
-        className="shareBtn col-md-1 col-sm-1 col-xs-1"
-       >
-        <a className="twitter">
-          twiter
-          <i className="fa fa-twitter" aria-hidden="true" />
-        </a>
-      </FacebookShareButton>
     </div>
   );
 }
